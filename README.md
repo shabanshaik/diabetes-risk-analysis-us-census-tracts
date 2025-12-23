@@ -29,6 +29,8 @@ This project analyzes the relationship between modifiable behavioral risk factor
 ## 📊 Dataset
 
 **Source:** [CDC PLACES: Local Data for Better Health, Census Tract Data 2023](https://catalog.data.gov/dataset/places-local-data-for-better-health-census-tract-data-2023-release)
+Due to file size constraints, the full CDC dataset is not included in this repository. Users can download it directly from the CDC source linked above.
+
 
 | Variable | Mean | Std Dev | Correlation with Diabetes |
 |----------|------|---------|---------------------------|
@@ -65,33 +67,20 @@ K-means clustering (k=4) identified four distinct community risk profiles:
 ## 📁 Project Structure
 
 ```
-diabetes-risk-analysis/
-├── data/
-│   ├── raw/                    # Original CDC PLACES data
-│   └── processed/              # Cleaned and transformed data
-├── notebooks/
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_eda_visualization.ipynb
-│   ├── 03_predictive_modeling.ipynb
-│   └── 04_clustering_analysis.ipynb
-├── src/
-│   ├── data_preprocessing.py
-│   ├── model_training.py
-│   ├── clustering.py
-│   └── visualization.py
-├── reports/
-│   ├── figures/               # Generated visualizations
-│   └── Final_Project_Report.pdf
-├── requirements.txt
-├── README.md
-└── LICENSE
+diabetes-risk-analysis-us-census-tracts/
+├── Code.ipynb              # Complete analysis notebook (EDA, modeling, clustering)
+├── Project Report.pdf      # Project documentation
+├── README.md               # Project overview
+├── LICENSE                 # MIT License
+├── requirements.txt        # Python dependencies
+└── .gitignore              # Git ignore rules
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-```bash
+```
 Python 3.8+
 pandas >= 1.3.0
 numpy >= 1.21.0
@@ -104,8 +93,8 @@ seaborn >= 0.11.0
 
 ```bash
 # Clone the repository
-git clone https://github.com/shabanshaik/diabetes-risk-analysis.git
-cd diabetes-risk-analysis
+git clone https://github.com/shabanshaik/diabetes-risk-analysis-us-census-tracts.git
+cd diabetes-risk-analysis-us-census-tracts
 
 # Install dependencies
 pip install -r requirements.txt
@@ -113,27 +102,31 @@ pip install -r requirements.txt
 
 ### Running the Analysis
 
+Open `Code.ipynb` in Jupyter Notebook or JupyterLab to explore the complete analysis:
+
 ```bash
-# Run data preprocessing
-python src/data_preprocessing.py
-
-# Run predictive modeling
-python src/model_training.py
-
-# Run clustering analysis
-python src/clustering.py
+jupyter notebook Code.ipynb
 ```
 
-## 📈 Visualizations
+The notebook includes:
+- Data loading and cleaning
+- Exploratory Data Analysis (EDA)
+- Correlation analysis and visualizations
+- Predictive modeling (Linear Regression, Decision Tree, Random Forest, Gradient Boosting)
+- K-means clustering analysis
+- Results interpretation
 
-### Correlation Heatmap
-![Correlation Heatmap](reports/figures/correlation_heatmap.png)
+## 📈 Key Visualizations
 
-### Feature Importance
-![Feature Importance](reports/figures/feature_importance.png)
-
-### Risk Cluster Profiles
-![Cluster Profiles](reports/figures/cluster_profiles.png)
+The analysis notebook includes:
+- Distribution of diabetes prevalence across census tracts
+- Top 10 states and counties by diabetes prevalence
+- Correlation heatmap between risk factors
+- Scatter plots of diabetes vs. each risk factor
+- Feature importance chart from Random Forest
+- Confusion matrix for risk classification
+- Elbow plot for optimal cluster selection
+- Health risk profiles by cluster
 
 ## 💡 Key Implications
 
@@ -158,7 +151,7 @@ python src/clustering.py
 
 ## 👥 Authors
 
-- **Shabana Shaik** - [GitHub](https://github.com/shabanshaik) | [LinkedIn](https://linkedin.com/in/shabanashaik)
+- **Shabana Shaik** - [GitHub](https://github.com/shabanshaik)
 - **Vishnu Vardhan Reddy Golamari**
 
 **Advisor:** Dr. Denise Philpot, University of North Texas
@@ -172,13 +165,11 @@ Key references from the analysis:
 - Wittman, J. T., et al. (2024). Identifying priority geographic locations for Diabetes Self-Management Education
 - Benavidez, G. A., et al. (2024). Chronic disease prevalence in the US: Sociodemographic and geographic variations
 
-See [REFERENCES.md](REFERENCES.md) for complete citation list.
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - CDC for providing the PLACES dataset
 - University of North Texas, Department of Information Science
